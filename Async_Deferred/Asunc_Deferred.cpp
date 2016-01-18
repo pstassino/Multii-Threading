@@ -5,15 +5,17 @@
 #include <thread>       // std::this_thread::sleep_for
 
 void print_ten( char c, int ms ) {
-	for ( int i=0; i<10; ++i ) {
+	std::cout << "thread: " << std::this_thread::get_id() << "\n";
+	for( int i=0; i<10; ++i ) {
 		std::this_thread::sleep_for( std::chrono::milliseconds( ms ) );
-		std::cout << c;
+		std::cout << c << ' ';
 	}
 }
 
 int main() {
 	std::future<void> foo, bar;
 
+	std::cout << "Main thread: " << std::this_thread::get_id() << "\n";
 	std::cout << "with launch::async:\n";
 	foo = std::async( std::launch::async, print_ten, '*', 100 );
 	bar = std::async( std::launch::async, print_ten, '@', 200 );

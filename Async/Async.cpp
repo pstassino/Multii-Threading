@@ -23,7 +23,7 @@ int main() {
 	std::future<bool> fut = std::async( is_prime, 313222313 );  
 
 	std::cout << "Checking whether 313222313 is prime.\n";
-	// ...						Parallel actions while the the is_prime function 
+	// ...					  	Parallel actions while the the is_prime function 
 
 	bool ret = fut.get();      // waits for is_prime to return
 
