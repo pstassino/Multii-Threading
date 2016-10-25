@@ -1,4 +1,4 @@
-// async example
+//async example
 
 // Calls fn at some point, returning without waiting for the execution of fn to complete.
 // Futures are objects associated to a shared state, and are constructed
